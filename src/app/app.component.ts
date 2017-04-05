@@ -11,8 +11,14 @@ import { AuthService } from './providers/auth.service';
 export class AppComponent {
   title = 'Funnel Your Money into Here Please :)';
   private isLoggedIn: boolean;
-  private user_displayName: string;
-  private user_email: string;
+  private userDisplayName: string;
+  private userEmail: string;
+  private userId: string;
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['login']);
+  }
 
   constructor(public authService: AuthService, private router: Router) {
     this.authService.af.auth.subscribe(
@@ -20,15 +26,16 @@ export class AppComponent {
         if (auth == null) {
           console.log("Logged out");
           this.isLoggedIn = false;
-          this.user_displayName = '';
-          this.user_email = '';
+          this.userDisplayName = '';
+          this.userEmail = '';
           this.router.navigate(['']);
         } else {
           this.isLoggedIn = true;
-          this.user_displayName = auth.google.displayName;
-          this.user_email = auth.google.email;
+          this.userDisplayName = auth.google.displayName;
+          this.userEmail = auth.google.email;
+          this.userId = auth.uid;
           console.log('Logged In');
-          console.log(auth);
+          console.log(auth.uid);
           this.router.navigate(['userPage']);
         }
       }

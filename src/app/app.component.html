@@ -10,9 +10,11 @@
   </div>
   <div *ngIf="isLoggedIn">
     <a class='navbar-brand navbar-right' routerLink="/userPage">Profile</a>
-    <a class='navbar-brand navbar-right' routerLink="/login">Logged In {{user_displayName}}</a>
-
+    <a class='navbar-brand navbar-right' (click)="logout()">Log Out</a>
+    <a class='navbar-brand navbar-right' routerLink="/login">Logged In {{userDisplayName}}</a>
   </div>
 
 </nav>
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

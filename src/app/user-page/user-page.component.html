@@ -1,9 +1,35 @@
-<div class="container">
 <div class="row">
-  <div class="jumbotron">
+
     <h1>Welcome</h1>
-    <p>You should only be able to see that page when you're logged in!</p>
-    <p><button class="btn btn-default" (click)="logout()">Logout</button></p>
-  </div>
-</div>
+    <button *ngIf='newProjectForm == false' (click)='toggleProjectForm()'>Create new project</button>
+
+    <div *ngIf='newProjectForm'>
+      <div class='form-group'>
+        <label>Title: </label>
+        <input #newTitle>
+      </div>
+
+      <label>Synopsis: </label>
+      <br>
+      <textarea #newSynopsis></textarea>
+      <br>
+      <label>Description: </label>
+      <br>
+      <textarea #newDescription></textarea>
+
+      <br><br>
+      <label>Monetary Goal: </label>
+      <input #newGoal>
+
+      <label>Goal Deadline: </label>
+      <input #newDeadline>
+      <br><br>
+      <label>Thumbnail Image: </label>
+      <input #newImage>
+      <br><br>
+      <button (click)='toggleProjectForm()'>Hide form</button>
+      <button (click)='addProject(newTitle.value, newSynopsis.value, newDescription.value, newGoal.value, newDeadline.value, newImage.value); newTitle.value = ""; newSynopsis.value = ""; newDescription.value = ""; newGoal.value = ""; newDeadline.value = ""; newImage.value = ""' >Publish New Project</button>
+    </div>
+
+
 </div>

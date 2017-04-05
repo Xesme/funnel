@@ -13,4 +13,8 @@ export class ProjectService {
     return this.projects;
   }
 
+  saveProject(newProject) {
+    this.projects.push(newProject);
+  }
+
 }
