@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "title": "Go-Go Yogurt",
+      "authors": ["1"],
+      "synopsis": "Yogurt with a kick!",
+      "description": "Go-Go Yogurt brings the fun of yogurt with the kick of an enrgy drink! Sponsored by TLC and Momma June (from the hit show Here comes Honey Boo Boo). Go-Go Yogurt comes in four great flavors: Mountain Dew, Cheesy Dorito, Disco Powder, and Dr. Pepper." ,
+      "goal": "10000" ,
+      "date": "2017-01-01",
+      "deadline": "2017-12-31",
+      "img":"https://www.thesun.co.uk/wp-content/uploads/2016/07/nintchdbpict000252786397.jpg?w=960&strip=all"
+    }, {
+      "title": "Dungeons and Robots!",
+      "authors": ["2"],
+      "synopsis": "Dungeons and Robots! Is a new table top game produce by ThinkRealLab",
+      "description": "In Dungeons and Robots! four players can battle against each other to see who can get the golden crystal first.",
+      "goal": "50000" ,
+      "date": "2017-08-04",
+      "deadline": "2017-09-04",
+      "img": "https://ksr-ugc.imgix.net/assets/011/277/063/4ac078edea740d1125a85248bcb66cf4_original.png?w=1552&h=873&fit=fill&bg=000000&v=1463673916&auto=format&q=92&s=46dc5eeff0b9b8410fbb2a060c5c4364"
+    }, {
+      "title":"Lil Bibs Cat Cleaner",
+      "authors": ["3"],
+      "synopsis": "A revolutionary cat shampoo",
+      "description": "Lil Bibs Cat Cleaner makes cleaning your cat easier than ever! It comes in an easy to use spray bottle." ,
+      "goal": "300000",
+      "date": "2017-11-03",
+      "deadline": "2017-12-31",
+      "img": "http://purrsngrrs.com/wp-content/uploads/2015/12/download.jpg"
+    }
+  ]
+}

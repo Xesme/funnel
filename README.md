@@ -64,8 +64,8 @@ As a user, I want to click a button or fill out a form to fund a project.
 |:-------------:|:-------------:|:-------------:|
 | Create a new project | follow Configuration/dependencies | completed |
 | Application has a well thought out README | Set up README with implementation plan and all other necessary information. | completed |
-| Create seed for firebase | projects.json | incomplete |
-| Application has imported firebase | ( "title": , "authors": ["$key"], "synopsis":, "description":, "img":, "goal":, "deadline":, "post-date") | incomplete |
+| Create seed for firebase | projects.json | complete |
+| Application has imported firebase | ( "title": , "authors": ["$key"], "synopsis":, "description":, "img":, "goal":, "deadline":, "post-date") | complete |
 | Create routing | $ touch app.router.ts | incomplete |
 | Create service for project | $ ng g service project.service | incomplete |
 | Implement ProjectService | import ProjectService | incomplete |
