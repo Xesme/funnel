@@ -66,11 +66,11 @@ As a user, I want to click a button or fill out a form to fund a project.
 | Application has a well thought out README | Set up README with implementation plan and all other necessary information. | completed |
 | Create seed for firebase | projects.json | complete |
 | Application has imported firebase | ( "title": , "authors": ["$key"], "synopsis":, "description":, "img":, "goal":, "deadline":, "post-date") | complete |
-| Create routing | $ touch app.router.ts | incomplete |
+| Create routing | $ touch app.router.ts | complete |
+| Route to homepage(splash) in navbar | <a (routerLink)="/"> | complete |
 | Create service for project | $ ng g service project.service | incomplete |
 | Implement ProjectService | import ProjectService | incomplete |
-| Route end game back to homepage(splash) | <a (routerLink)="/"> | incomplete |
-| Create components | ( splash, login, user-page, project-page, new-project ) | incomplete |
+| Create components | ( splash, login, user-page, project-page, new-project ) | started (splash, )|
 | Implement routing for all components | add to routes to router.ts and module.ts | incomplete|
 | Create user authorization | implement angular 2 Oauth | incomplete |
 | Retrieve data from firebase | Import FirebaseListObservables<any[]> and add to constructor(s) private  angularfire: AngularFire (in service as well as .ts files using the service) | incomplete |
