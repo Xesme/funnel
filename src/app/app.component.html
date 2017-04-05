@@ -5,6 +5,14 @@
     </div>
   </div>
   <a class='navbar-brand' routerLink='/'>Home</a>
-  <a class='navbar-brand' routerLink="/login">Log In</a>
+  <div *ngIf="!isLoggedIn">
+    <a class='navbar-brand navbar-right' routerLink="/login">Log In</a>
+  </div>
+  <div *ngIf="isLoggedIn">
+    <a class='navbar-brand navbar-right' routerLink="/userPage">Profile</a>
+    <a class='navbar-brand navbar-right' routerLink="/login">Logged In {{user_displayName}}</a>
+
+  </div>
+
 </nav>
 <router-outlet></router-outlet>

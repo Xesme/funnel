@@ -71,9 +71,9 @@ As a user, I want to click a button or fill out a form to fund a project.
 | Create service for project | $ ng g service project.service | complete |
 | Implement ProjectService | import ProjectService | complete |
 | Retrieve data from firebase | Import FirebaseListObservables<any[]> and add to constructor(s) private  angularfire: AngularFire (in service as well as .ts files using the service) | complete |
-| Create components | ( splash, login, user-page, project-page, new-project ) | started (splash, )|
+| Create components | ( splash, login, user-page, project-page, new-project ) | started (splash, login, user-page )|
 | Implement routing for all components | add to routes to router.ts and module.ts | incomplete|
-| Create user authorization | implement angular 2 Oauth | incomplete |
+| Create user authorization | implement angular 2 Oauth | complete |
 | Implement post request to Firebase  (form on component new-project) | push to firebase (new project)| incomplete |
 | Create dynamic routing between components | get project by id | incomplete |
 | Create pipe for generating projects on the splash page and user-page | $ng g pipe project.pipe | incomplete |

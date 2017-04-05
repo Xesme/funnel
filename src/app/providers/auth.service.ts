@@ -13,7 +13,9 @@ export class AuthService {
     });
   }
 
-  login() {
+  logout() {
     return this.af.auth.logout();
   }
+
+
 }
