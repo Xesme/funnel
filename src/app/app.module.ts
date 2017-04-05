@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { masterFirebaseConfig } from './api-keys';
-import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
-import { SplashComponent } from './splash/splash.component';
+import { AuthService } from './providers/auth.service';
 import { routing } from './app.routing';
+
+import { AppComponent } from './app.component';
+import { SplashComponent } from './splash/splash.component';
 import { LoginComponent } from './login/login.component';
 
 export const firebaseConfig = {
@@ -30,7 +32,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     routing
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
