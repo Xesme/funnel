@@ -76,8 +76,8 @@ As a user, I want to click a button or fill out a form to fund a project.
 | Create user authorization | implement angular 2 Oauth | complete |
 | Create route for new-project from user-page | add button for new-project form on user-page | complete |
 | Implement post request to Firebase  (form on component new-project) | push to firebase (new project)| complete |
+| Create dynamic routing between components | get project by $key | complete |
 | Create dynamic routing for user-page |  use the $key provided by Oauth | incomplete |
-| Create dynamic routing between components | get project by id | incomplete |
 | Create pipe for generating projects on the splash page and user-page | $ng g pipe project.pipe | incomplete |
 | Create form for updating projects | project-page (? admin project-page) | incomplete |
 | (Extra) Project is portfolio-quality | Removed unnecessary code and use SASS or CSS for styling | incomplete |

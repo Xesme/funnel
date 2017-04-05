@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SplashComponent } from './splash/splash.component';
 import { LoginComponent } from './login/login.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { ProjectComponent } from './project/project.component';
 
 const appRoutes: Routes = [
   {
@@ -15,6 +16,10 @@ const appRoutes: Routes = [
   {
     path: 'userPage',
     component: UserPageComponent
+  },
+  {
+    path: 'project/:id',
+    component: ProjectComponent
   }
 
 ]

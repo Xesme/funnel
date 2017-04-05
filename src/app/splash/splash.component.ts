@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-splash',
@@ -11,10 +12,14 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class SplashComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, private router: Router) { }
 
   ngOnInit() {
     this.projects = this.projectService.getProjects();
   }
 
+  goToProject(project) {
+    this.router.navigate(['project', project.$key]);
+    console.log(project.$key);
+  }
 }
