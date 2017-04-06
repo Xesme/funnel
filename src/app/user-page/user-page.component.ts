@@ -3,8 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AuthService } from '../providers/auth.service';
 import { ProjectService } from '../project.service';
 import { Location } from '@angular/common';
-
-
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-user-page',
@@ -15,17 +14,22 @@ import { Location } from '@angular/common';
 export class UserPageComponent implements OnInit {
   newProjectForm = false;
   profileKey: string;
+  projects: FirebaseListObservable<any[]>;
 
   constructor(private authService: AuthService, private router: Router, private projectService: ProjectService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameter) => {
       this.profileKey = urlParameter['id'];
-      console.log(this.profileKey)
     });
+    // console.log(this.profileKey)
+    this.projects = this.projectService.getProjectsAuthorId(this.profileKey);
+    this.projects.subscribe(ref => console.log(ref));
+    console.log(this.projects);
     // this.projectService.getProfileById(this.projectKey).subscribe( snap => {
     //   this.project = snap;
     // });
+
   }
 
   toggleProjectForm() {
@@ -36,6 +40,7 @@ export class UserPageComponent implements OnInit {
     }
   }
 
+
   addProject(title: string, synopsis: string, description: string, goal: string, deadline: string, img: string) {
     var newProject = {
       title: title,
@@ -44,7 +49,7 @@ export class UserPageComponent implements OnInit {
       goal: goal,
       deadline: deadline,
       img: img,
-      authorId: [this.profileKey]
+      authorId: this.profileKey
     }
     this.projectService.saveProject(newProject);
   }

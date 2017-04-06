@@ -78,6 +78,7 @@ As a user, I want to click a button or fill out a form to fund a project.
 | Implement post request to Firebase  (form on component new-project) | push to firebase (new project)| complete |
 | Create dynamic routing between components | get project by $key | complete |
 | Create dynamic routing for user-page |  use the $key provided by Oauth | complete |
+| Query the database for AuthorID | Add query to ProjectService | complete | 
 | Create one to many relationship for new project form | update firebase and created the one to many relationship using the userId | incomplete |
 | Create pipe for generating projects on the splash page and user-page | $ng g pipe project.pipe | incomplete |
 | Create form for updating projects | project-page (? admin project-page) | incomplete |

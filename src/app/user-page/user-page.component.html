@@ -3,6 +3,10 @@
     <h1>Welcome</h1>
     <button *ngIf='newProjectForm == false' (click)='toggleProjectForm()'>Create new project</button>
 
+    <div *ngFor='let project of projects | async'>
+      {{project.title}}
+    </div>
+
     <div *ngIf='newProjectForm'>
       <div class='form-group'>
         <label>Title: </label>
