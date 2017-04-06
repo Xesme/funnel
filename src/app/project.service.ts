@@ -30,6 +30,11 @@ export class ProjectService {
     });
   }
 
+  deleteProject(projectToDelete) {
+    var projectInFirebase = this.getProjectByID(projectToDelete.$key);
+    projectInFirebase.remove();
+  }
+
   updateProject(localUpdateProject) {
     var projectInFirebase = this.getProjectByID(localUpdateProject.$key);
     projectInFirebase.update({

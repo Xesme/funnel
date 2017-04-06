@@ -18,4 +18,10 @@ export class EditProjectComponent implements OnInit {
   sendEditForm(projectToUpdate) {
     this.projectService.updateProject(projectToUpdate)
   }
+
+  deleteProject(projectToDelete) {
+    if(confirm("Are you sure you want to delete?")) {
+      this.projectService.deleteProject(projectToDelete);
+    }
+  }
 }

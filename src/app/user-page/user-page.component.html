@@ -1,19 +1,7 @@
 <div class="row">
     {{userId}}
     <h1>Welcome</h1>
-    <button *ngIf='newProjectForm == false' (click)='toggleProjectForm()'>Create new project</button>
-      <div *ngFor='let project of projects | async'>
-
-
-        <div class="well">
-        <br>
-        {{project.title}}
-        <button *ngIf='editProjectForm == null' class="btn-small" (click)="toggleEditForm(project)">edit</button>
-        <button *ngIf='editProjectForm == project' class="btn-small" (click)="toggleEditForm(project)">hide</button>
-        <app-edit-project *ngIf="editProjectForm == project" [project]='project'></app-edit-project>
-      </div>
-    </div>
-
+    <button class="btn btn-primary"*ngIf='newProjectForm == false' (click)='toggleProjectForm()'>Create new project</button>
     <div *ngIf='newProjectForm'>
       <div class='form-group'>
         <label>Title: </label>
@@ -43,4 +31,14 @@
       <button (click)='toggleProjectForm()'>Hide form</button>
       <button (click)='addProject(newTitle.value, newSynopsis.value, newDescription.value, newGoal.value, newDeadline.value, newImage.value); newTitle.value = ""; newSynopsis.value = ""; newDescription.value = ""; newGoal.value = ""; newDeadline.value = ""; newImage.value = ""' >Publish New Project</button>
     </div>
+</div>
+<br><br><hr>
+<div *ngFor='let project of projects | async'>
+  <div class="well">
+    <br>
+    {{project.title}}
+    <button *ngIf='editProjectForm == null' class="btn btn-small btn-info" (click)="toggleEditForm(project)">edit</button>
+    <button *ngIf='editProjectForm == project' class="btn-small" (click)="toggleEditForm(project)">hide</button>
+    <app-edit-project *ngIf="editProjectForm == project" [project]='project'></app-edit-project>
+  </div>
 </div>
