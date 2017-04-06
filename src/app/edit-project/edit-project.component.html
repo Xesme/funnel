@@ -1,0 +1,31 @@
+<div class="well">
+  <div class='form-group'>
+    <label>Title: </label>
+    <input [(ngModel)]='project.title' required>
+  </div>
+  <div class='form-group'>
+    <label>Synopsis: </label>
+    <textarea [(ngModel)]='project.synopsis'></textarea>
+  </div>
+
+  <div class='form-group'>
+    <label>Description: </label>
+    <textarea [(ngModel)]='project.description' required></textarea>
+  </div>
+
+  <div class='form-group'>
+    <label>Monetary Goal: </label>
+    <input [(ngModel)]='project.goal' required>
+  </div>
+
+  <div class='form-group'>
+    <label>Goal Deadline: </label>
+    <input [(ngModel)]='project.deadline' required>
+  </div>
+
+  <div class='form-group'>
+    <label>Thumbnail Image: </label>
+    <input [(ngModel)]='project.img' required>
+  </div>
+<button (click)="editProjectForm(newTitle.value, newSynopsis.value, newDescription.value, newGoal.value, newDeadline.value, newImage.value); newTitle.value = ''; newSynopsis.value = ''; newDescription.value = ''; newGoal.value = ''; newDeadline.value = ''; newImage.value = '' ">Submit Changes</button>
+</div>

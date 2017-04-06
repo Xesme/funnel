@@ -2,9 +2,16 @@
     {{userId}}
     <h1>Welcome</h1>
     <button *ngIf='newProjectForm == false' (click)='toggleProjectForm()'>Create new project</button>
+      <div *ngFor='let project of projects | async'>
 
-    <div *ngFor='let project of projects | async'>
-      {{project.title}}
+
+        <div class="well">
+        <br>
+        {{project.title}}
+        <button *ngIf='editProjectForm == null' class="btn-small" (click)="toggleEditForm(project)">edit</button>
+        <button *ngIf='editProjectForm == project' class="btn-small" (click)="toggleEditForm(project)">hide</button>
+        <app-edit-project *ngIf="editProjectForm == project" [project]='project'></app-edit-project>
+      </div>
     </div>
 
     <div *ngIf='newProjectForm'>
@@ -28,12 +35,12 @@
       <label>Goal Deadline: </label>
       <input #newDeadline>
       <br><br>
+
       <label>Thumbnail Image: </label>
       <input #newImage>
+
       <br><br>
       <button (click)='toggleProjectForm()'>Hide form</button>
       <button (click)='addProject(newTitle.value, newSynopsis.value, newDescription.value, newGoal.value, newDeadline.value, newImage.value); newTitle.value = ""; newSynopsis.value = ""; newDescription.value = ""; newGoal.value = ""; newDeadline.value = ""; newImage.value = ""' >Publish New Project</button>
     </div>
-
-
 </div>

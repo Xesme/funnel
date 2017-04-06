@@ -58,7 +58,7 @@ As a user, I want to click a button or fill out a form to fund a project.
 
     * Firebase (data management)
 
-    ## Implementation Plan  
+## Implementation Plan  
 
 | Objective | Implementation | Status |
 |:-------------:|:-------------:|:-------------:|
@@ -67,7 +67,7 @@ As a user, I want to click a button or fill out a form to fund a project.
 | Create seed for firebase | projects.json | complete |
 | Application has imported firebase | ( "title": , "authors": ["$key"], "synopsis":, "description":, "img":, "goal":, "deadline":, "post-date") | complete |
 | Create routing | $ touch app.router.ts | complete |
-| Route to homepage(splash) in navbar | <a (routerLink)="/"> | complete |
+| Route to homepage(splash) in navbar | < a (routerLink)="/"> | complete |
 | Create service for project | $ ng g service project.service | complete |
 | Implement ProjectService | import ProjectService | complete |
 | Retrieve data from firebase | Import FirebaseListObservables<any[]> and add to constructor(s) private  angularfire: AngularFire (in service as well as .ts files using the service) | complete |
@@ -78,8 +78,10 @@ As a user, I want to click a button or fill out a form to fund a project.
 | Implement post request to Firebase  (form on component new-project) | push to firebase (new project)| complete |
 | Create dynamic routing between components | get project by $key | complete |
 | Create dynamic routing for user-page |  use the $key provided by Oauth | complete |
-| Query the database for AuthorID | Add query to ProjectService | complete | 
-| Create one to many relationship for new project form | update firebase and created the one to many relationship using the userId | incomplete |
+| Create link authorId with Projects when creating a new project| update firebase and create a one to many relationship using the authorId | complete |
+| Query the database for AuthorID | Add query to ProjectService | complete |
+| Add the ability to edit a project from the user-page | Add form and use the authorId and projectId for edit an existing project | incomplete |
+|Add the ability to delete a project from the user-page | Add a delete button on the user-page with the projectId | incomplete |  
 | Create pipe for generating projects on the splash page and user-page | $ng g pipe project.pipe | incomplete |
 | Create form for updating projects | project-page (? admin project-page) | incomplete |
 | (Extra) Project is portfolio-quality | Removed unnecessary code and use SASS or CSS for styling | incomplete |

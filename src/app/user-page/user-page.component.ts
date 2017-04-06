@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Location } from '@angular/common';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AuthService } from '../providers/auth.service';
 import { ProjectService } from '../project.service';
-import { Location } from '@angular/common';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-user-page',
@@ -13,6 +13,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class UserPageComponent implements OnInit {
   newProjectForm = false;
+  editProjectForm;
   profileKey: string;
   projects: FirebaseListObservable<any[]>;
 
@@ -22,14 +23,7 @@ export class UserPageComponent implements OnInit {
     this.route.params.forEach((urlParameter) => {
       this.profileKey = urlParameter['id'];
     });
-    // console.log(this.profileKey)
     this.projects = this.projectService.getProjectsAuthorId(this.profileKey);
-    this.projects.subscribe(ref => console.log(ref));
-    console.log(this.projects);
-    // this.projectService.getProfileById(this.projectKey).subscribe( snap => {
-    //   this.project = snap;
-    // });
-
   }
 
   toggleProjectForm() {
@@ -40,6 +34,13 @@ export class UserPageComponent implements OnInit {
     }
   }
 
+  toggleEditForm(project) {
+    if (this.editProjectForm == project) {
+      this.editProjectForm = null;
+    } else {
+      this.editProjectForm = project;
+    }
+  }
 
   addProject(title: string, synopsis: string, description: string, goal: string, deadline: string, img: string) {
     var newProject = {
@@ -53,4 +54,5 @@ export class UserPageComponent implements OnInit {
     }
     this.projectService.saveProject(newProject);
   }
+
 }
