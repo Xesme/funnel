@@ -1,3 +1,11 @@
-<div  *ngFor='let project of projects | async'>
+<label>Filter projects by goal amount</label>
+<select [(ngModel)]='operand' [ngModelOptions]='{standalone:true}'>
+  <option value="allProject">Show All</option>
+  <option value="greaterThan">Greater Than</option>
+  <option value="lessThan">Less Than</option>
+</select>
+<input type="number" min="0" [(ngModel)]='money' [ngModelOptions]='{standalone:true}'>
+
+<div  *ngFor='let project of projects | async | funnel:operand:money'>
   <p (click)='goToProject(project)'> {{project.title}}</p>
 </div>

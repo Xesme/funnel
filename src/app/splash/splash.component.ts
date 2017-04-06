@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Router } from '@angular/router';
+import { FunnelPipe } from '../funnel.pipe';
 
 @Component({
   selector: 'app-splash',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SplashComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
+  // money;
 
   constructor(private projectService: ProjectService, private router: Router) { }
 
@@ -22,4 +24,5 @@ export class SplashComponent implements OnInit {
     this.router.navigate(['project', project.$key]);
     console.log(project.$key);
   }
+
 }

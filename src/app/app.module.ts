@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { ProjectComponent } from './project/project.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { FunnelPipe } from './funnel.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -29,7 +30,8 @@ export const firebaseConfig = {
     LoginComponent,
     UserPageComponent,
     ProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    FunnelPipe
   ],
   imports: [
     BrowserModule,
