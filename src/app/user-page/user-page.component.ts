@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AuthService } from '../providers/auth.service';
 import { ProjectService } from '../project.service';
+import { Location } from '@angular/common';
+
 
 
 @Component({
@@ -11,9 +13,9 @@ import { ProjectService } from '../project.service';
   providers: [ProjectService]
 })
 export class UserPageComponent implements OnInit {
-  newProjectForm: boolean = false;
+  newProjectForm = false;
 
-  constructor(private authService: AuthService, private router: Router, private projectService: ProjectService) { }
+  constructor(private authService: AuthService, private router: Router, private projectService: ProjectService, private activatedRoute: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
   }
@@ -36,7 +38,5 @@ export class UserPageComponent implements OnInit {
       img: img
     }
     this.projectService.saveProject(newProject);
-
   }
-
 }

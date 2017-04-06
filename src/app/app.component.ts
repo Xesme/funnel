@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from './providers/auth.service';
@@ -35,10 +35,14 @@ export class AppComponent {
           this.userEmail = auth.google.email;
           this.userId = auth.uid;
           console.log('Logged In');
-          console.log(auth.uid);
-          this.router.navigate(['userPage']);
+          this.router.navigate(['profile', this.userId]);
         }
       }
     );
+  }
+
+  goToProfile(profile) {
+    this.router.navigate(['profile', this.userId]);
+    console.log(this.userId);
   }
 }

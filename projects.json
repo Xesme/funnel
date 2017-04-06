@@ -28,5 +28,12 @@
       "deadline": "2017-12-31",
       "img": "http://purrsngrrs.com/wp-content/uploads/2015/12/download.jpg"
     }
+  ],
+  "users": [
+    {
+      "name": ,
+      "googleId": ,
+      "projectId":
+    }
   ]
 }
