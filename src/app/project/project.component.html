@@ -1,3 +1,16 @@
-<p>
-  this works
-</p>
+<div class="well">
+  <h2>{{(project | async)?.title}}</h2>
+  <br>
+  <h3>Goal to reach: ${{(project | async)?.goal}}</h3>
+  <h3>Deadline to reach goal: {{(project | async)?.deadline}}</h3>
+</div>
+<br>
+<div class="well">
+  <!-- <div class="well"> -->
+    <img src="{{(project | async)?.img}}" alt="a photo" />
+  <!-- </div> -->
+  <br>
+  <p>
+    {{(project | async)?.description}}
+  </p>
+</div>

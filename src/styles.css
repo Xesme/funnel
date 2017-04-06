@@ -2,3 +2,23 @@ textarea {
   width: 500px;
   height: 100px;
 }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 350px;
+  border-radius: 50px 50px
+}
+
+nav {
+  padding-right: 30px;
+}
+
+#pipe-float {
+  float: right;
+}
+
+#link-hover:hover {
+  cursor: pointer;
+}

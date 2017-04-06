@@ -1,20 +1,19 @@
-<nav class='navbar navbar-default'>
-  <div class='container-fluid'>
-    <div class='navbar-header'>
-      <h3>{{title}}</h3>
-    </div>
-  </div>
-  <a class='navbar-brand' routerLink='/'>Home</a>
-  <div *ngIf="!isLoggedIn">
-    <a class='navbar-brand navbar-right' routerLink="/login">Log In</a>
-  </div>
-  <div *ngIf="isLoggedIn">
-    <a class='navbar-brand navbar-right' id='profileLink' (click)="goToProfile(userId)">Profile</a>
-    <a class='navbar-brand navbar-right' (click)="logout()">Log Out</a>
-    <a class='navbar-brand navbar-right' routerLink="/login">Logged In {{userDisplayName}}</a>
-  </div>
-
-</nav>
 <div class="container">
-  <router-outlet></router-outlet>
+  <nav class='navbar navbar-default'>
+    <div class='container-fluid'>
+      <div class='navbar-header'>
+        <h3>{{title}}</h3>
+      </div>
+    </div>
+    <a class='navbar-brand' routerLink='/'>Home</a>
+    <div *ngIf="!isLoggedIn">
+      <a class='navbar-brand navbar-right' routerLink="/login">Log In</a>
+    </div>
+    <div id="nav-bar" *ngIf="isLoggedIn">
+      <a class='navbar-brand navbar-right' id='profileLink' (click)="goToProfile(userId)">Profile</a>
+      <a class='navbar-brand navbar-right' (click)="logout()">Log Out</a>
+      <a class='navbar-brand navbar-right' routerLink="/login">Logged In {{userDisplayName}}</a>
+    </div>
+  </nav>
+    <router-outlet></router-outlet>
 </div>

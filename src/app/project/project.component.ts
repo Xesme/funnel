@@ -19,9 +19,7 @@ export class ProjectComponent implements OnInit {
     this.route.params.forEach((urlParameter) => {
       this.projectKey = urlParameter['id'];
     });
-    this.projectService.getProjectByID(this.projectKey).subscribe( snap => {
-      this.project = snap;
-    });
+    this.project = this.projectService.getProjectByID(this.projectKey);
   }
 
 }

@@ -83,7 +83,7 @@ As a user, I want to click a button or fill out a form to fund a project.
 | Add the ability to edit a project from the user-page | Add form and use the authorId and projectId for edit an existing project | complete |
 |Add the ability to delete a project from the user-page | Add a delete button on the user-page with the projectId | complete |  
 | Create pipe for generating projects on the splash page and user-page | $ng g pipe project.pipe | complete |
-| (Extra) Project is portfolio-quality | Removed unnecessary code and use SASS or CSS for styling | incomplete |
+| (Extra) Project is portfolio-quality | Removed unnecessary code and use SASS or CSS for styling | started |
 
 
 ## Development server
