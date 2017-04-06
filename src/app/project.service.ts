@@ -29,4 +29,15 @@ export class ProjectService {
       }
     });
   }
+
+  updateProject(localUpdateProject) {
+    var projectInFirebase = this.getProjectByID(localUpdateProject.$key);
+    projectInFirebase.update({
+      title: localUpdateProject.title,
+      synopsis: localUpdateProject.synopsis,
+      description: localUpdateProject.description,
+      goal: localUpdateProject.goal,
+      deadline: localUpdateProject.deadline,
+      img: localUpdateProject.img});
+  }
 }

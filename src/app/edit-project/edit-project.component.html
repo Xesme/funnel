@@ -27,5 +27,5 @@
     <label>Thumbnail Image: </label>
     <input [(ngModel)]='project.img' required>
   </div>
-<button (click)="editProjectForm(newTitle.value, newSynopsis.value, newDescription.value, newGoal.value, newDeadline.value, newImage.value); newTitle.value = ''; newSynopsis.value = ''; newDescription.value = ''; newGoal.value = ''; newDeadline.value = ''; newImage.value = '' ">Submit Changes</button>
+<button (click)="sendEditForm(project)">Submit Changes</button>
 </div>
